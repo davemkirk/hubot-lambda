@@ -1,0 +1,19 @@
+{
+  "name": "hubot-lambda",
+  "version": "0.0.0",
+  "description": "A Hubot script for invoking AWS Lambda functions",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Hubot",
+    "AWS",
+    "Lambda"
+  ],
+  "author": "David Kirk <davemkirk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.0.30"
+  }
+}
