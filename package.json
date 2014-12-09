@@ -11,9 +11,13 @@
     "AWS",
     "Lambda"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davemkirk/hubot-lambda.git"
+  },
   "author": "David Kirk <davemkirk@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.0.30"
+    "aws-sdk": "^2.0.31"
   }
 }
