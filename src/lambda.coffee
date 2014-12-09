@@ -15,6 +15,7 @@ lambda = new AWS.Lambda(
 )
 
 module.exports = (robot) ->
+
   robot.respond /lambda (.*)\s(.*)/i, (msg) ->
 
     func = msg.match[1]
@@ -23,18 +24,40 @@ module.exports = (robot) ->
     params =
       FunctionName: func
       InvokeArgs: JSON.stringify(
+        callbackId: 0
         arg1: arg1
       )
 
-    lambda.invokeAsync params, (err, data) ->
+    lambda.invokeAsync(
+      params
+    ).on("success", (response) ->
+        msg.send "Your lambda invocation was accepted (requestId: " + response.requestId + ")"
+        return
 
-      if err # an error occurred
-        console.log err, err.stack
-        msg.send err
+    ).on("error", (response) ->
+        #console.log "error: " + response
+        msg.send "error: " + response
+        return
 
-      else # successful response
-        msg.send "Yo"
-        console.log data
+    ).send()
+    return
 
-      return
+
+  robot.router.post '/lambda/:callbackid', (req, res) ->
+    
+    callbackid = req.params.callbackid
+    room = "Shell" #brain.callbackid.room
+
+    robot.emit "lambdaCallback", {
+        callbackid  : callbackid,
+        room        : room,
+        msg         : res.body
+    }
+
+
+  robot.on "lambdaCallback", (callback) ->
+    robot.send callback.room, "callbackid #{callback.callbackid} called back!"
+
+
+
 
