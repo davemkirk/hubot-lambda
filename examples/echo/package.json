@@ -1,0 +1,19 @@
+{
+  "name": "hubot-lambda-echo-handler",
+  "version": "0.0.0",
+  "description": "Example AWS Lambda script that responds to hubot-lambda",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "hubot"
+  ],
+  "author": "David Kirk <davemkirk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.51.0"
+  }
+}
