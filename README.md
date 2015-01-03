@@ -4,7 +4,7 @@ A [Hubot](https://hubot.github.com/) script for invoking [AWS Lambda](http://aws
 
 ## Why
 
-- Seperate invocation privileges from execution privileges.
+- Separate invocation privileges from execution privileges.
 - New languages will almost certainly be added to AWS Lambda, in this case hubot-lambda would enable easy cross language Hubot integrations.
 - Potentially a robust mechanism for enabling ad-hoc hubot script additions/modifications without recycling the hubot process. (I'd like some feedback on this one)  
 
