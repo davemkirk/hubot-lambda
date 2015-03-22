@@ -1,4 +1,5 @@
 # hubot-lambda
+[![Build Status](https://travis-ci.org/davemkirk/hubot-lambda.svg?branch=master)](https://travis-ci.org/davemkirk/hubot-lambda)
 
 A [Hubot](https://hubot.github.com/) script for invoking [AWS Lambda](http://aws.amazon.com/lambda/) functions
 
