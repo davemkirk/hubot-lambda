@@ -1,6 +1,6 @@
 {
   "name": "hubot-lambda",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Hubot script for invoking AWS Lambda functions",
   "main": "index.coffee",
   "scripts": {
