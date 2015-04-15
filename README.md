@@ -68,14 +68,16 @@ Example
 
 ## Developing hubot-lambda
 
-Running from working dir
+##### Running from working dir
 -----
+```
 vagrant up
 vagrant ssh
 cd hubot
 ./bin/hubot
+```
 
-Troubleshooting
+##### Troubleshooting
 -----
 >HUBOT_LOG_LEVEL=debug ./bin/hubot
 
