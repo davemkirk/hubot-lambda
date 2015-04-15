@@ -65,3 +65,17 @@ Example
 - `hubot lambda helloWorld Yo`
 
 
+
+## Developing hubot-lambda
+
+Running from working dir
+-----
+vagrant up
+vagrant ssh
+cd hubot
+./bin/hubot
+
+Troubleshooting
+-----
+>HUBOT_LOG_LEVEL=debug ./bin/hubot
+
