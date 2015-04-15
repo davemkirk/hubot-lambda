@@ -29,8 +29,6 @@ module.exports = (robot) ->
     func = msg.match[1]
     arg1 = msg.match[2]
 
-    console.log msg.match
-
     payload = JSON.stringify(message: arg1)
 
     params =
