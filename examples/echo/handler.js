@@ -1,28 +1,15 @@
-var request = require("request");
 
 exports.handler = function(event, context) {
     
-    var invokeid    = context.invokeid,
-        message     = event.message
-        botUrl      = event.botUrl;
+    var message = event.message;
+    console.log(message);
 
-
-    if(message == null || botUrl == null){
+    if(message == null){
         console.log("ERROR: expected input missing \n" + JSON.stringify(event));
         context.done(null);
         return;
     }
 
-    botCallback(botUrl, invokeid, message, function(){ context.done(null); });
+    context.succeed(message);  // Echo back the message
 };
 
-function botCallback(botUrl, invokeid, message, cb){
-    
-    var callbackurl = botUrl + invokeid + '/'
-
-    console.log("callbackurl: " + callbackurl);
-
-    request.post({url:callbackurl,form:{"msg":message}}, 
-        function(error, response, body){ cb(); }
-    );
-}

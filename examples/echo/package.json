@@ -14,6 +14,5 @@
   "author": "David Kirk <davemkirk@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.51.0"
   }
 }

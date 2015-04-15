@@ -18,6 +18,7 @@
   "author": "David Kirk <davemkirk@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.0.31"
-  }
+    "aws-sdk": "^2.1.23"
+  },
+  "main": "index.coffee"
 }
