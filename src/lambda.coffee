@@ -24,10 +24,12 @@ lambda = new AWS.Lambda(
 
 module.exports = (robot) ->
 
-  robot.respond /lambda (.*)\s?(.*)/i, (msg) ->
+  robot.respond /lambda ([a-zA-Z0-9-]+)\s?(.*)/i, (msg) ->
 
     func = msg.match[1]
     arg1 = msg.match[2]
+
+    console.log msg.match
 
     payload = JSON.stringify(message: arg1)
 
