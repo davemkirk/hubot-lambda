@@ -1,6 +1,6 @@
 {
   "name": "hubot-lambda",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Hubot script for invoking AWS Lambda functions",
   "main": "index.coffee",
   "scripts": {
@@ -19,6 +19,5 @@
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.1.23"
-  },
-  "main": "index.coffee"
+  }
 }
