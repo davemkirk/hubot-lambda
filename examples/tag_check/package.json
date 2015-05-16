@@ -1,0 +1,16 @@
+{
+  "name": "examples_tag_check",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Kirk <davemkirk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.9.0",
+    "aws-sdk": "^2.1.23",
+    "lodash": "^3.8.0"
+  }
+}
