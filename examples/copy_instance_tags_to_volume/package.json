@@ -1,0 +1,16 @@
+{
+  "name": "examples_copy_instance_tags_to_volume",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Jelinek IV <john@johnjelinek.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.2.1",
+    "aws-sdk": "^2.1.35",
+    "lodash": "^3.9.3"
+  }
+}
