@@ -30,7 +30,7 @@ module.exports = (robot) ->
     args = msg.match[2]
 
     parsed_args = {}
-    args.replace /(\b[^:]+):([^\s]+)/g, ($0, param, value) ->
+    args.replace /([^\s:]+):([^\s]+)/g, ($0, param, value) ->
       parsed_args[param] = value
       return
 
