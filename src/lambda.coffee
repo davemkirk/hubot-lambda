@@ -7,7 +7,7 @@
 # Notes:
 #
 # Author:
-#   davemkirk@gmail.com   
+#   davemkirk@gmail.com
 
 region = process.env.HUBOT_LAMBDA_REGION ? "us-east-1"
 accessKeyId = process.env.HUBOT_LAMBDA_AWS_ACCESS_KEY_ID
