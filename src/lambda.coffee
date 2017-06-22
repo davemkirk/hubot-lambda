@@ -46,9 +46,11 @@ module.exports = (robot) ->
       params
     ).on("success", (response) ->
 
-      payload = JSON.parse(response.data.Payload)
-      msg.send payload
-      #console.log(response.data.StatusCode, response.data.Payload)
+      msg.send func + " invoked with " + payload
+
+      response_payload = JSON.parse(response.data.Payload)
+      msg.send response_payload
+      # console.log(response.data.StatusCode, response.data.Payload)
 
     ).on("error", (response) ->
       msg.send "error: " + response
