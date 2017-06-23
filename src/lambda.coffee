@@ -2,12 +2,12 @@
 #   Invokes an AWS Lambda function
 #
 # Commands:
-#   hubot lambda <function> <args>
+#   hubot lambda <function> <arg:value> <arg2:value> - Invokes an AWS lambda function with the given args
 #
 # Notes:
 #
 # Author:
-#   davemkirk@gmail.com   
+#   davemkirk@gmail.com
 
 region = process.env.HUBOT_LAMBDA_REGION ? "us-east-1"
 accessKeyId = process.env.HUBOT_LAMBDA_AWS_ACCESS_KEY_ID
@@ -27,9 +27,14 @@ module.exports = (robot) ->
   robot.respond /lambda ([a-zA-Z0-9-]+)\s?(.*)/i, (msg) ->
 
     func = msg.match[1]
-    arg1 = msg.match[2]
+    args = msg.match[2]
 
-    payload = JSON.stringify(message: arg1)
+    parsed_args = {}
+    args.replace /([^\s:]+):([^\s]+)/g, ($0, param, value) ->
+      parsed_args[param] = value
+      return
+
+    payload = JSON.stringify(parsed_args)
 
     params =
       FunctionName: func
@@ -41,9 +46,11 @@ module.exports = (robot) ->
       params
     ).on("success", (response) ->
 
-      payload = JSON.parse(response.data.Payload)
-      msg.send payload
-      #console.log(response.data.StatusCode, response.data.Payload)
+      msg.send func + " invoked with " + payload
+
+      response_payload = JSON.parse(response.data.Payload)
+      msg.send response_payload
+      # console.log(response.data.StatusCode, response.data.Payload)
 
     ).on("error", (response) ->
       msg.send "error: " + response
